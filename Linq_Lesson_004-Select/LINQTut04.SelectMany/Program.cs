@@ -8,8 +8,8 @@ namespace LINQTut04.SelectMany
     {
         static void Main(string[] args)
         {
-            //RunExample01();
-            RunExample02();
+            RunExample01();
+           // RunExample02();
             Console.ReadKey();
         }
 
@@ -21,7 +21,7 @@ namespace LINQTut04.SelectMany
                 "in general i love programming"
             };
 
-            var words = sentences.SelectMany(x => x.Split(' '));
+            var words = sentences.Select(x => x);
             foreach (var word in words)
                 Console.WriteLine(word);
         }
@@ -36,7 +36,7 @@ namespace LINQTut04.SelectMany
                            from skill in employee.Skills
                            select skill).Distinct();
 
-            foreach (var skill in result01)
+            foreach (var skill in skills)
                 Console.WriteLine(skill);
 
         }
